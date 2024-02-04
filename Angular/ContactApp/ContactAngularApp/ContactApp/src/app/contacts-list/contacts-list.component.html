@@ -1,0 +1,31 @@
+<h2>Contacts list</h2>
+
+<div class="searchContainer">
+    <span class="searchSpan">Search by name: </span>
+    <input type="text" [(ngModel)]="searchInput" (keyup)="searchContact()">
+</div>
+
+<div class="sortContainer">
+    <span class="sortSpan">Sort by name: </span>
+    <button mat-button color="primary" class="ascendingButton" (click)="sortAscending()">Ascending</button>
+    <button mat-button color="primary" class="descendingButton" (click)="sortDescending()">Descending</button>
+</div>
+
+<div *ngIf="contactsSearchList.length != 0">
+    <ul *ngFor="let contact of contactsSearchList">
+        <li class="listItem">{{contact.name}}</li>
+        <button mat-raised-button color="primary" (click)="showDetails(contact.id)">Show contact details</button>
+    </ul>
+</div>
+
+<div *ngIf="contactsSearchList.length == 0">
+    <ul *ngFor="let contact of contactsList">
+        <li class="listItem">{{contact.name}}</li>
+        <button mat-raised-button color="primary" (click)="showDetails(contact.id)">Show contact details</button>
+    </ul>
+</div>
+
+
+<!--
+    <app-contact-details [contactFromList]="contactToUpdate"></app-contact-details>
+-->

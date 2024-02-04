@@ -1,0 +1,17 @@
+<h2>Contact creation</h2>
+<mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" [(ngModel)]="name">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Telephone number</mat-label>
+    <input matInput type="number" [(ngModel)]="telephoneNumber">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" [(ngModel)]="email">
+</mat-form-field>
+<br>
+<button mat-raised-button color="primary" (click)="createContact()">Create contact</button>
